@@ -19,15 +19,6 @@ def imprima_palabra():
     return acierto
 
 
-def quitar_intentos():
-    intento -= 1
-    print(f'\nPalabra no encontrada, te quedan {intento} intentos')
-    return
-    if intento == 0:
-        print('Perdiste')
-        return
-
-
 while(intento > 0):
     completa = ""
     adiv = input("\nIngrese letra o palabra:")
@@ -41,7 +32,10 @@ while(intento > 0):
         else:
             completas.append(completa)
             imprima_palabra()
-            quitar_intentos()
+            intento -= 1
+            print(f'\nPalabra no encontrada, te quedan {intento} intentos')
+            if intento == 0:
+                print('Perdiste')
 
     elif adiv in acumu:
         print('Ya mencionaste esa letra!')
