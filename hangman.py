@@ -8,7 +8,7 @@ import random
 
 f = open('words.txt')
 lines = f.readlines()
-palabra = random.choice(lines)
+palabra = random.choice(lines).strip()
 
 print(f'\nTu palabra es de {len(palabra)} letras')
 intento = 5
